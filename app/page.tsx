@@ -1,113 +1,246 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Button from "@/components/button";
+import ProductCard from "@/components/productCard";
+const Home = () => {
+    const bg = { backgroundColor: "#F9B31D" }
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <section className="w-full flex-center flex-col text-red">
+            <section className='mt-32 h-screen w-full  pl-5'>
+                <div className='mt-10 h-full w-1/4 flex float-right rounded-l-full relative' style={bg}></div>
+                <div className=" pt-10 w-1/2 mt-44 absolute">
+                    <h1 className="  text-6xl font-bold tracking-wide leading-tight w-2/3">Handmade, With an Extra Pinch of <span className="text-red-600">Love</span></h1>
+                    <p className=" text-3xl leading-10 mb-6 ">Lorem ipsum, dolor sit amet consectetur adipis. doloremque aut quas</p>
+                    <Button text="ORDER NOW" cart={true} />
+                </div>
+                <Image
+                    src={"/images/big-piz.png"}
+                    width={450}
+                    height={200}
+                    alt="pizza"
+                    className="absolute top-44 right-48"
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                />
+                <Image
+                    src={"/images/onion.png"}
+                    width={90}
+                    height={90}
+                    alt="pizza"
+                    className="absolute -bottom-20 left-1/2"
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                />
+                <Image
+                    src={"/images/small-pizz.png"}
+                    width={200}
+                    height={200}
+                    alt="pizza"
+                    className="absolute -bottom-44 right-28"
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                />
+            </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            <section className="w-full h-screen flex items-center  pl-5">
+                <div className=" self-start">
+                    <Image
+                        src={"/images/turn-piz.png"}
+                        width={500}
+                        height={200}
+                        alt="pizza"
+                        className=""
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+                    />
+                </div>
+
+                <div className=" w-1/3 ml-24">
+                    <h1 className="font-bold text-5xl mb-10">Daily Fresh and Always tasty</h1>
+
+                    <p className="text-3xl leading-10">Lorem ipsum dolor sit amet corrupti laboriosam vitae? Officiis.</p>
+
+                </div>
+                <div>
+                    <Image
+                        src={"/images/garlic.png"}
+                        width={80}
+                        height={100}
+                        alt="pizza"
+                        className=""
+
+                    />
+                </div>
+
+            </section>
+
+            <section className=" pl-5 mb-20">
+                <div className="mb-20">
+                    <p className="text-red-600 font-semibold text-2xl">Popular Dishes</p>
+                    <p className="text-5xl font-bold">Browse our Menu</p>
+                </div>
+                <div className=" grid grid-cols-3 gap-x-4 gap-y-10">
+                    <ProductCard
+                        url="/images/sandwich.jpg"
+                        title="Burga Pizza"
+                        subTitle="This is a burga pizza"
+                        price={20}
+                        stars={5}
+                    />
+                    <ProductCard
+                        url="/images/burger.jpg"
+                        title="Burga Pizza"
+                        subTitle="This is a burga pizza"
+                        price={20}
+                        stars={5}
+                    />
+                    <ProductCard
+                        url="/images/sandwich.jpg"
+                        title="Burga Pizza"
+                        subTitle="This is a burga pizza"
+                        price={20}
+                        stars={3}
+                    />
+                    <ProductCard
+                        url="/images/small-pizz.png"
+                        title="Burga Pizza"
+                        subTitle="This is a burga pizza"
+                        price={20}
+                        stars={3.5}
+                    />
+                </div>
+            </section>
+            <section className="bg-[#FFFAEE] px-5 py-5 relative">
+                <Image
+                    src={"/images/pizza-half.png"}
+                    width={250}
+                    height={250}
+                    alt="pizza"
+                    className="absolute right-5 top-10"
+
+                />
+                <div className="mb-10 mt-20">
+                    <p className="text-red-600 font-semibold text-2xl">Our Strength</p>
+                    <p className="text-4xl font-bold">Why We Are The Best</p>
+                </div>
+                <div className="grid grid-cols-4 gap-x-9 mb-20">
+                    <div className="flex-col">
+                        <Image
+                            src={"/icons/rice.png"}
+                            width={30}
+                            height={30}
+                            alt="pizza"
+                            className=""
+
+                        />
+                        <p className="font-bold my-5 ">All Kinds of Food</p>
+                        <p className="text-xl">Lorem ipsum, is the dolorepturi omnis debitis quidem.</p>
+                    </div>
+                    <div className="flex-col">
+                        <Image
+                            src={"/icons/flower.png"}
+                            width={30}
+                            height={30}
+                            alt="pizza"
+                            className=""
+
+                        />
+                        <p className="font-bold my-5 ">All Kinds of Food</p>
+                        <p className="text-xl">Lorem ipsum, is the dolorepturi omnis debitis quidem.</p>
+                    </div>
+                    <div className="flex-col">
+                        <Image
+                            src={"/icons/smile.png"}
+                            width={30}
+                            height={30}
+                            alt="pizza"
+                            className=""
+
+                        />
+                        <p className="font-bold my-5 ">All Kinds of Food</p>
+                        <p className="text-xl">Lorem ipsum, is the dolorepturi omnis debitis quidem.</p>
+                    </div>
+                    <div className="flex-col">
+                        <Image
+                            src={"/icons/location.png"}
+                            width={30}
+                            height={30}
+                            alt="pizza"
+                            className=""
+
+                        />
+                        <p className="font-bold my-5 ">All Kinds of Food</p>
+                        <p className="text-xl">Lorem ipsum, is the dolorepturi omnis debitis quidem.</p>
+                    </div>
+                </div>
+            </section>
+            <section className="pl-5 pt-5">
+                <Image
+                    src={"/icons/leaf.png"}
+                    width={100}
+                    height={100}
+                    alt="pizza"
+                    className=""
+
+                />
+                <div className="mb-20">
+                    <p className="text-red-600 font-semibold text-2xl">Customer Feedback</p>
+                    <p className="text-4xl font-bold">Client Testimonials</p>
+                </div>
+                <div className="grid grid-cols-4 gap-x-4">
+                    <div className="flex-col justify-center items-center text-center text-xl border py-10 px-5 rounded-xl">
+                        <div className="w-1/2 text-center m-auto">
+                            <Image
+                                src={"/images/tom.jpg"}
+                                width={100}
+                                height={100}
+                                alt="pizza"
+                                className=" rounded-full w-full"
+
+                            /></div>
+                        <p className=" font-semibold my-5">Takar Bowa</p>
+                        <p className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. o deleniti earum eos natus iure quia tenetur corrupti error hic nisi, rem eius?</p>
+                    </div>
+                    <div className="flex-col justify-center items-center text-center text-xl border py-10 px-5 rounded-xl">
+                        <div className="w-1/2 text-center m-auto">
+                            <Image
+                                src={"/images/client-2_sjfy2z.jpg"}
+                                width={100}
+                                height={100}
+                                alt="pizza"
+                                className=" rounded-full w-full"
+
+                            /></div>
+                        <p className=" font-semibold my-5">Takar Bowa</p>
+                        <p className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. o deleniti earum eos natus iure quia tenetur corrupti error hic nisi, rem eius?</p>
+                    </div>
+                    <div className="flex-col justify-center items-center text-center text-xl border py-10 px-5 rounded-xl">
+                        <div className="w-1/2 text-center m-auto">
+                            <Image
+                                src={"/images/client-3_utvld0.jpg"}
+                                width={100}
+                                height={100}
+                                alt="pizza"
+                                className=" rounded-full w-full"
+
+                            /></div>
+                        <p className=" font-semibold my-5">Takar Bowa</p>
+                        <p className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. o deleniti earum eos natus iure quia tenetur corrupti error hic nisi, rem eius?</p>
+                    </div>
+                    <div className="flex-col justify-center items-center text-center text-xl border py-10 px-5 rounded-xl">
+                        <div className="w-1/2 text-center m-auto">
+                            <Image
+                                src={"/images/tom.jpg"}
+                                width={100}
+                                height={100}
+                                alt="pizza"
+                                className=" rounded-full w-full"
+
+                            /></div>
+                        <p className=" font-semibold my-5">Takar Bowa</p>
+                        <p className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. o deleniti earum eos natus iure quia tenetur corrupti error hic nisi, rem eius?</p>
+                    </div>
+    
+                </div>
+            </section>
+        </section>
+    );
+};
+
+export default Home;
