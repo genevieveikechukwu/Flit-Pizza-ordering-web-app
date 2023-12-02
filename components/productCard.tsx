@@ -1,6 +1,10 @@
+"use client"
+
 import Image from "next/image"
 import Button from "./button"
 import Star from "./star"
+import { FaCartShopping } from "react-icons/fa6";
+import { useRouter } from 'next/navigation'
 
 interface productProps {
     url: string,
@@ -8,6 +12,7 @@ interface productProps {
     price: number,
     title: string,
     subTitle: string
+    slug?: string
 
 }
 const ProductCard = (props: productProps) => {
@@ -16,11 +21,18 @@ const ProductCard = (props: productProps) => {
         stars,
         price,
         title,
-        subTitle
+        subTitle,
+        slug
 
     } = props
+    const router = useRouter()
+    const getProductSlug = async (url: string) => {
+       router.push(url)
+    } 
+
+    const cartStyle = { color: "white", marginRight: "0.8rem" }
     return (
-        <div className=" border-gray-200 border rounded-xl p-5">
+        <div className="border-gray-200 border rounded-xl p-5 cursor-pointer" onClick={()=>getProductSlug(slug || "/products")} >
             <Image
                 src={url}
                 height={300}
@@ -35,8 +47,8 @@ const ProductCard = (props: productProps) => {
                 <Star star={stars}/>
 
                 <p className="mt-5 mb-5">{subTitle} </p>
-
-                <Button text="ORDER NOW" cart={true} />
+                <p className="w-fit">  <Button text="ORDER NOW" cart={<FaCartShopping style={cartStyle} />} /></p>
+              
             </div>
 
         </div>

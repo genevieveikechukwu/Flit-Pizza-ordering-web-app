@@ -1,21 +1,27 @@
-import { FaCartShopping } from "react-icons/fa6";
+import { ReactNode } from 'react';
 
 interface buttonProps {
     text  : string,
-    cart? : boolean
+    cart? : ReactNode
+    red?: boolean
+    url?: string
 }
 
 const Button = (
 props:buttonProps
 ) => {
-    const bg = { backgroundColor: "#F9B304"}
-    const style = { color: "white", marginRight: "0.8rem" }
+  
 
-    const {text, cart} = props
+
+   
+
+  const { text, cart, red } = props
   return (
-    <button className="p-4  h-10 rounded-full text-center align-middle text-white flex items-center hover:scale-105" style={bg}>
+    <button className={`p-4 w-full h-10 rounded-full text-center justify-center text-white flex items-center hover:scale-105 bg-[#F9B304] ${ red ? " hover:bg-[#F53040]" : " "}` } 
+
+    >
     {cart && (
-              <FaCartShopping style={style} /> 
+       cart
     )} {text}
     </button>
   )

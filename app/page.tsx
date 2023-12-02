@@ -1,17 +1,21 @@
 import Image from "next/image";
 import Button from "@/components/button";
 import ProductCard from "@/components/productCard";
+import { FaCartShopping } from "react-icons/fa6";
+
 const Home = () => {
     const bg = { backgroundColor: "#F9B31D" }
-
+    const cartStyle = { color: "white", marginRight: "0.8rem" }
     return (
         <section className="w-full flex-center flex-col text-red">
-            <section className='mt-32 h-screen w-full  pl-5'>
+            <section className='mt-24 h-screen w-full  pl-5'>
                 <div className='mt-10 h-full w-1/4 flex float-right rounded-l-full relative' style={bg}></div>
                 <div className=" pt-10 w-1/2 mt-44 absolute">
                     <h1 className="  text-6xl font-bold tracking-wide leading-tight w-2/3">Handmade, With an Extra Pinch of <span className="text-red-600">Love</span></h1>
                     <p className=" text-3xl leading-10 mb-6 ">Lorem ipsum, dolor sit amet consectetur adipis. doloremque aut quas</p>
-                    <Button text="ORDER NOW" cart={true} />
+                    <div className="w-fit">
+                        <Button text="ORDER NOW" cart={<FaCartShopping style={cartStyle} />} />
+                        </div>
                 </div>
                 <Image
                     src={"/images/big-piz.png"}
@@ -75,7 +79,7 @@ const Home = () => {
                     <p className="text-red-600 font-semibold text-2xl">Popular Dishes</p>
                     <p className="text-5xl font-bold">Browse our Menu</p>
                 </div>
-                <div className=" grid grid-cols-3 gap-x-4 gap-y-10">
+                <div className="products">
                     <ProductCard
                         url="/images/sandwich.jpg"
                         title="Burga Pizza"
