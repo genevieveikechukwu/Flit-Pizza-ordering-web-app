@@ -18,7 +18,7 @@ const Modal:React.FC<ContentProps> = ({content}) => {
         Show modal using a portal
       </button>
       {showModal &&(
-        <Content onClose={() => setShowModal(false)} children={content} />
+        <Content onClose={() => setShowModal(false)} content={content} />
       )}
     </div>
   )

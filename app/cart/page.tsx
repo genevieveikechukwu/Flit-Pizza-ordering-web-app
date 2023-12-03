@@ -11,7 +11,7 @@ import Modal from "@/components/modal/modal"
 const Cart = () => {
     const [displaybtns, setDisplayBtns] = useState(false)
     const [paid, setPaid] = useState(true)
-    const children = (
+    const content = (
         <div className="w-full m-auto">
             <h1 className="text-xl font-semibold mb-5">You will Pay $12 on delivery</h1>
             <form action="" className="w-full flex-col ">
@@ -158,7 +158,7 @@ const Cart = () => {
                                 </div>
                             </div>
 
-                                <Modal content={children}/>
+                                <Modal content={content}/>
 
                       
                         </>

@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react'
 
 interface ContentProps{
-    children?: ReactNode;
+    content?: ReactNode;
     onClose: () => void;
     
 }
