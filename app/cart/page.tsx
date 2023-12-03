@@ -10,7 +10,7 @@ import Modal from "@/components/modal/modal"
 
 const Cart = () => {
     const [displaybtns, setDisplayBtns] = useState(false)
-    const [paid, setPaid] = useState(true)
+    const [paid, setPaid] = useState(false)
     const content = (
         <div className="w-full m-auto">
             <h1 className="text-xl font-semibold mb-5">You will Pay $12 on delivery</h1>
@@ -27,7 +27,7 @@ const Cart = () => {
         </div>
     )
     return (
-        <section className='mt-24 pl-5 flex'>
+        <section className='mt-24 pl-5 flex pb-5'>
             <div className="w-[71%]">
                 {
                     !paid && (
@@ -157,9 +157,6 @@ const Cart = () => {
                                     <p className="text-lg">Delivered</p>
                                 </div>
                             </div>
-
-                                <Modal content={content}/>
-
                       
                         </>
                     )
@@ -182,7 +179,8 @@ const Cart = () => {
 
                     {displaybtns ? (
                         <>
-                            <div className=" bg-white text-teal-400 p-1 mb-2">CASH ON DELIVERY</div>
+                            <div className=" bg-white text-teal-400 p-1 mb-2">CASH ON DELIVERY
+                                <Modal content={content} /></div>
                             <div className=" italic bg-[#F9B304] p-1"> <span className=" text-blue-700">Pay</span><span className=" text-cyan-600">Pal</span> </div>
                         </>
                     ) : (
