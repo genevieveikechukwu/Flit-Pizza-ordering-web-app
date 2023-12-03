@@ -1,5 +1,6 @@
+
 import '../styles/globals.css'
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 

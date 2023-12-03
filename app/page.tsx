@@ -3,6 +3,7 @@ import Button from "@/components/button";
 import ProductCard from "@/components/productCard";
 import { FaCartShopping } from "react-icons/fa6";
 
+
 const Home = () => {
     const bg = { backgroundColor: "#F9B31D" }
     const cartStyle = { color: "white", marginRight: "0.8rem" }
