@@ -158,7 +158,7 @@ const Cart = () => {
                                 </div>
                             </div>
 
-                                <Modal children={children}/>
+                                <Modal content={children}/>
 
                       
                         </>

@@ -4,12 +4,12 @@ import { useState } from 'react';
 import Content from './content';
 
 interface ContentProps {
-  children?: ReactNode;
+  content?: ReactNode;
 
 
 }
 
-const Modal:React.FC<ContentProps> = ({children}) => {
+const Modal:React.FC<ContentProps> = ({content}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className=' p-5'>
@@ -18,7 +18,7 @@ const Modal:React.FC<ContentProps> = ({children}) => {
         Show modal using a portal
       </button>
       {showModal &&(
-        <Content onClose={() => setShowModal(false)} children={children} />
+        <Content onClose={() => setShowModal(false)} children={content} />
       )}
     </div>
   )
