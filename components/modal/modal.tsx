@@ -1,7 +1,8 @@
 'use client'
-import { ReactNode } from 'react';
-import { useState } from 'react';
+import { ReactNode, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import Content from './content';
+import SettingsContext from '@/utils/context/settingsControls';
 
 interface ContentProps {
   content?: ReactNode;
@@ -11,11 +12,13 @@ interface ContentProps {
 }
 
 const Modal:React.FC<ContentProps> = ({content}) => {
-  const [showModal, setShowModal] = useState(false);
+const {showModal} = useContext(SettingsContext)
   return (
-    <div className='' onClick={() => setShowModal(true)}>
-      {showModal &&(
-        <Content onClose={() => setShowModal(false)} content={content} />
+    <div className='  z-50' >
+      {showModal && createPortal(
+        <Content  content={content} />,
+
+        document.body
       )}
     </div>
   )

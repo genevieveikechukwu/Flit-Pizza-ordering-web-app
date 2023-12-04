@@ -1,5 +1,6 @@
 "use client"
-import { useState } from "react"
+import { useState,useContext } from "react"
+import SettingsContext from "@/utils/context/settingsControls"
 import Button from "@/components/button"
 import Image from "next/image"
 import { MdOutlinePhonelinkRing } from "react-icons/md"
@@ -11,6 +12,7 @@ import Modal from "@/components/modal/modal"
 const Cart = () => {
     const [displaybtns, setDisplayBtns] = useState(false)
     const [paid, setPaid] = useState(false)
+    const {setShowModal } = useContext(SettingsContext)
     const content = (
         <div className="w-full m-auto">
             <h1 className="text-xl font-semibold mb-5">You will Pay $12 on delivery</h1>
@@ -29,6 +31,7 @@ const Cart = () => {
     return (
         <section className='mt-24 pl-5 flex pb-5'>
             <div className="w-[71%]">
+                <Modal content={content} />
                 {
                     !paid && (
                         <>
@@ -157,7 +160,6 @@ const Cart = () => {
                                     <p className="text-lg">Delivered</p>
                                 </div>
                             </div>
-                      
                         </>
                     )
                 }
@@ -179,12 +181,14 @@ const Cart = () => {
 
                     {displaybtns ? (
                         <>
-                            <div className=" bg-white text-teal-400 p-1 mb-2">CASH ON DELIVERY
-                                <Modal content={content} /></div>
-                            <div className=" italic bg-[#F9B304] p-1"> <span className=" text-blue-700">Pay</span><span className=" text-cyan-600">Pal</span> </div>
+                            <div className=" bg-white text-teal-400 p-1 mb-2 hover:cursor-pointer" onClick={() => setShowModal(true)}>CASH ON DELIVERY
+                              
+                             </div>
+                            <div className=" italic bg-[#F9B304] p-1 hover:cursor-pointer"> <span className=" text-blue-700">Pay</span><span className=" text-cyan-600">Pal</span> </div>
                         </>
                     ) : (
                         <Button text={`${paid ? "PAID" : "CHECKOUT NOW!"}`} />
+                        
                     )
                     }
                 </div>

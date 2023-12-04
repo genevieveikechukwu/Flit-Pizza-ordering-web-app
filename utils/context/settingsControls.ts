@@ -3,17 +3,17 @@ import { createContext } from "react";
 
 export interface Settings{
     isAdmin: boolean,
-    setAdmin: (id:string) => void,
-    setShouldShowCart: (shouldShowCart: boolean) => void,
-    shouldShowCart: boolean,
+    setAdmin: (isAdmin: boolean) => void,
+    setShowModal: (ShowModal: boolean) => void,
+    showModal: boolean,
 }
 
 
 const SettingsContext = createContext<Settings>({
     isAdmin: false,
     setAdmin: ()=>{},
-    setShouldShowCart: () => { },
-    shouldShowCart: false
+    setShowModal: () => { },
+    showModal: false
 })
 
 export default SettingsContext;
